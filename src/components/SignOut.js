@@ -1,8 +1,14 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
 
-const SignOut = () =>
-  <div>
-    <h1>SignOut</h1>
-  </div>;
+import {auth} from '../firebase';
 
-export default SignOut;
+const SignOutButton = () =>
+    <Button bsStyle="danger"
+            type="button"
+            onClick={auth.doSignOut}>
+        Sign Out
+    </Button>;
+
+
+export default SignOutButton;

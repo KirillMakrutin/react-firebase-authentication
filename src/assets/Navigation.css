@@ -17,5 +17,6 @@
 }
 
 .Navigation a:hover, .Navigation a:active, .Navigation a.active {
-    color: #fa923f
+    color: #fa923f;
+    text-decoration: none;
 }
