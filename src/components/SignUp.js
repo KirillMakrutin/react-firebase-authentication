@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link, withRouter} from 'react-router-dom';
-
+import {Grid, Row, Col, FormControl, Button} from 'react-bootstrap';
 import '../assets/SignUpForm.css'
 
 import { auth } from '../firebase';
@@ -8,7 +8,7 @@ import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
 const SignUpPage = ({history}) =>
-    <div className='SignUpPage'>
+    <div>
         <h1>SignUp</h1>
         <SignUpForm history={history}/>
     </div>;
@@ -70,37 +70,44 @@ class SignUpForm extends Component {
             username === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    value={username}
-                    onChange={event => this.setState(byPropKey('username', event.target.value))}
-                    type="text"
-                    placeholder="Full Name"
-                />
-                <input
-                    value={email}
-                    onChange={event => this.setState(byPropKey('email', event.target.value))}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <input
-                    value={passwordOne}
-                    onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-                    type="password"
-                    placeholder="Password"
-                />
-                <input
-                    value={passwordTwo}
-                    onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-                    type="password"
-                    placeholder="Confirm Password"
-                />
-                <button disabled={isInvalid} type="submit">
-                    Sign Up
-                </button>
+            <Grid>
+                <Row>
+                    <Col xs={12}>
+                        <form onSubmit={this.onSubmit} className="SignUpForm">
+                            <FormControl
+                                value={username}
+                                onChange={event => this.setState(byPropKey('username', event.target.value))}
+                                type="text"
+                                placeholder="Full Name"
+                            />
+                            <FormControl
+                                value={email}
+                                onChange={event => this.setState(byPropKey('email', event.target.value))}
+                                type="text"
+                                placeholder="Email Address"
+                            />
+                            <FormControl
+                                value={passwordOne}
+                                onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <FormControl
+                                value={passwordTwo}
+                                onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                                type="password"
+                                placeholder="Confirm Password"
+                            />
+                            <Button bsStyle="primary" disabled={isInvalid} type="submit">
+                                Sign Up
+                            </Button>
 
-                {error && <p>{error.message}</p>}
-            </form>
+                            {error && <p>{error.message}</p>}
+                        </form>
+                    </Col>
+                </Row>
+            </Grid>
+
         );
     }
 }
