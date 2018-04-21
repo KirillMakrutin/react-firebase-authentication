@@ -1,0 +1,14 @@
+.SignInForm input {
+    margin: 15px 0;
+}
+
+.SignInForm button {
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .SignInForm {
+        width: 50%;
+        margin: auto;
+    }
+}
