@@ -1,0 +1,36 @@
+.SignUpPage {
+    width: 80%;
+    margin: auto;
+    border: 1px solid lightgray;
+    padding: 20px;
+}
+
+.SignUpPage input {
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.SignUpPage button {
+    display: block;
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 450px) {
+    .SignUpPage {
+        width: 45%;
+    }
+}
+
+@media (min-width: 760px) {
+    .SignUpPage {
+        width: 25%;
+    }
+}
+

@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 
 import * as routes from '../constants/routes';
 
+import '../assets/Navigation.css';
+
 const Navigation = () =>
-    <div>
+    <div className="Navigation">
       <ul>
         <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-        <li><Link to={routes.LANDING}>Landing</Link></li>
+        <li><Link to={routes.LANDING} exact>Landing</Link></li>
         <li><Link to={routes.HOME}>Home</Link></li>
         <li><Link to={routes.ACCOUNT}>Account</Link></li>
       </ul>
